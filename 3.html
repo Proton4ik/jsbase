@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+        let res1 = 10 + 10 + "10";
+        console.log(res1);
+        let res2 = 10 + "10" + 10;
+        console.log(res2);
+        let res3 = 10 + 10 + +"10";
+        console.log(res3);
+        let res4 = 10 / -"";
+        console.log(res4);
+        let res5 = 10 + "2,5";
+        console.log(res5);
+
+        /*
+        1. к 10 прибавляем 10 это 20 и строку 10 и в строчном формате итого 2010
+        2. к числу 10 прибавляем строку и опять число 10 получается просто строка 101010
+        3. складываем 2 числа 10 и переводим строку в число с помощью унарного плюса и также прибавляем. поэтому получается 30
+        4.унарный минус превращает пустые кавычки в -0. 10 /-0 получается минус бесконечность
+        5. неявное переведение в строку. 102,5
+        */
+
+    </script>
+</body>
+
+</html>
