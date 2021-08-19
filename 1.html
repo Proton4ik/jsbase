@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //пример 1
+        let a = 1, b = 1, c, d; //присваеваем а=1 b=1 и обьявляем c и d
+        c = ++a;                //присваиваем с значение а+1=2 так как префиксный оператор ++ а =2
+        alert(c); // ответ: 2
+        //пример 2
+        d = b++;                //присваиваем d значение b=1,  присваеваем b  b+1=2 так как ++ стоит после b, b =2
+        alert(d); //ответ: 1
+        //пример 3
+        c = 2 + ++a;            //присваиваем с значение 2+3(++ стоит до переменной а)=5, а =3
+        alert(c); //ответ: 5
+        //пример 4
+        d = 2 + b++;            //присваиваем d  значение 2+2=4, b=3
+        alert(d); //ответ: 4
+        alert(a); //3
+        alert(b); //3
+    </script>
+
+</body>
+
+</html>
