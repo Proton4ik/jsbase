@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function PostES5(author, text, date) {
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
+
+        PostES5.prototype.editES5 = function (param) {
+            this.text = param;
+            alert(this.text);
+        }
+
+        class PostES6 {
+            constructor(author, text, date) {
+                this.author = author;
+                this.text = text;
+                this.date = date;
+            }
+
+            editES6(param) {
+                this.text = param;
+                alert(this.text);
+            }
+        }
+
+        let book1 = new PostES5('111', '111', '111');
+        let book2 = new PostES6('111', '111', '111');
+        book1.editES5('абв');
+        book2.editES6('абв');
+
+        function AttachedPostES5(author, text, date) {
+            PostES5.call(this, author, text, date);
+            this.highlighted = false;
+        }
+
+        AttachedPostES5.prototype = Object.create(PostES5);
+        AttachedPostES5.prototype.constructor = AttachedPostES5;
+        AttachedPostES5.prototype.makeTextHighlightedES5 = function () {
+            this.highlighted = true;
+            alert(this.highlighted);
+        }
+
+        let book3 = new AttachedPostES5('111', '111', '111');
+        book3.makeTextHighlightedES5();
+
+
+
+        class AttachedPostES6 extends PostES6 {
+            constructor(author, text, date) {
+                super(author, text, date);
+                this.highlighted = false;
+            }
+            makeTextHighlightedES6() {
+                this.highlighted = true;
+                alert(this.highlighted);
+            }
+        }
+
+        let book4 = new AttachedPostES6(11, 1, 1);
+        book4.makeTextHighlightedES6();
+
+    </script>
+</body>
+
+</html>
